@@ -22,6 +22,20 @@ public class Sandwich {
             System.out.print("Not Applicable");
             return;
         }
+            System.out.print("Would you like the sandwich loaded? (yes/no)");
+            String answer = scanner.next();
+
+            if (answer.equals("yes")) {
+                if (basePrice == regular){
+                    basePrice = basePrice + 1.0f;
+                }
+                if (basePrice == large) {
+                    basePrice = basePrice + 1.75f;
+                }
+            }
+
+            else
+                return;
 
 
             System.out.print("What is your age?\n");
@@ -29,7 +43,7 @@ public class Sandwich {
 
             float officialPrice;
             if (age <= 17) {
-                officialPrice = basePrice - (basePrice * 10f);
+                officialPrice = basePrice - (basePrice * .10f);
             }
             else if (age >= 65){
                 officialPrice = basePrice - (basePrice * .20f);
