@@ -5,26 +5,28 @@ import java.util.Scanner;
 public class RentalCarCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Pickup date?");
+        System.out.print("Pickup date? ");
         String date = scanner.next();
 
-        System.out.print("Number of days for rental:");
+        System.out.print("Number of days for rental: ");
         int days = scanner.nextInt();
 
         System.out.print("Do you want an electronic tag at $3.95 per day? (y/n)");
         String answer = scanner.next();
 
         float initialCost = 29.99f * days;
-        float tagCost;
+        float tagCost = 0;
         if (answer.equals("y")) {
             tagCost = 3.95f * days;
         } else if (answer.equals("n")) {
             tagCost = 0;
 
-        } else
+        } else {
+            System.out.println("Invalid choice");
             return;
+        }
 
-        System.out.print("Do you want a GPS at $2.95 a day? (y/n)");
+        System.out.print("Do you want a GPS at $2.95 a day? (y/n) ");
         String answer2 = scanner.next();
 
         if (answer2.equals("y")) {
